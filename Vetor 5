@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Criando um array para armazenar os números
+        int[] vetor = new int[5];
+
+        // Criando um scanner para ler a entrada do usuário
+        Scanner scanner = new Scanner(System.in);
+
+        // Pedindo ao usuário para inserir os números
+        System.out.println("Digite 5 números inteiros:");
+        for (int i = 0; i < 5; i++) {
+            System.out.print("Digite o " + (i + 1) + "º número: ");
+            vetor[i] = scanner.nextInt();
+        }
+
+        // Exibindo os números
+        System.out.println("\nOs números que você digitou são:");
+        for (int num : vetor) {
+            System.out.println(num);
+        }
+
+        // Fechando o scanner
+        scanner.close();
+    }
+}
