@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Criando um array para armazenar os caracteres
+        char[] caracteres = new char[10];
+
+        // Criando um scanner para ler a entrada do usuário
+        Scanner scanner = new Scanner(System.in);
+
+        // Pedindo ao usuário para inserir os caracteres
+        System.out.println("Digite 10 caracteres:");
+
+        // Lendo os caracteres e armazenando-os no array
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Digite o " + (i + 1) + "º caractere: ");
+            caracteres[i] = scanner.next().charAt(0);
+        }
+
+        // Contando as consoantes e imprimindo-as
+        int consoantes = 0;
+        System.out.println("\nAs consoantes digitadas são:");
+        for (char c : caracteres) {
+            if (Character.isLetter(c) && !isVogal(c)) {
+                System.out.println(c);
+                consoantes++;
+            }
+        }
+        System.out.println("Total de consoantes lidas: " + consoantes);
+
+        // Fechando o scanner
+        scanner.close();
+    }
+
+    // Função para verificar se um caractere é uma vogal
+    private static boolean isVogal(char c) {
+        c = Character.toLowerCase(c);
+        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+    }
+}
