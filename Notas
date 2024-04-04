@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Criando um array para armazenar as notas
+        double[] notas = new double[4];
+
+        // Criando um scanner para ler a entrada do usuário
+        Scanner scanner = new Scanner(System.in);
+
+        // Pedindo ao usuário para inserir as notas
+        System.out.println("Digite as 4 notas:");
+
+        // Lendo as notas e armazenando-as no array
+        double soma = 0;
+        for (int i = 0; i < 4; i++) {
+            System.out.print("Digite a nota " + (i + 1) + ": ");
+            notas[i] = scanner.nextDouble();
+            soma += notas[i];
+        }
+
+        // Calculando a média
+        double media = soma / 4;
+
+        // Exibindo as notas e a média
+        System.out.println("\nAs notas digitadas são:");
+        for (int i = 0; i < 4; i++) {
+            System.out.println("Nota " + (i + 1) + ": " + notas[i]);
+        }
+        System.out.println("A média das notas é: " + media);
+
+        // Fechando o scanner
+        scanner.close();
+    }
+}
