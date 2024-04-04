@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Criando um array para armazenar os números reais
+        double[] vetor = new double[10];
+
+        // Criando um scanner para ler a entrada do usuário
+        Scanner scanner = new Scanner(System.in);
+
+        // Pedindo ao usuário para inserir os números
+        System.out.println("Digite 10 números reais:");
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Digite o " + (i + 1) + "º número: ");
+            vetor[i] = scanner.nextDouble();
+        }
+
+        // Exibindo os números na ordem inversa
+        System.out.println("\nOs números na ordem inversa são:");
+        for (int i = 9; i >= 0; i--) {
+            System.out.println(vetor[i]);
+        }
+
+        // Fechando o scanner
+        scanner.close();
+    }
+}
